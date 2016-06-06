@@ -12,15 +12,15 @@ class P02Spec extends FunSpec with DiagrammedAssertions {
         P02.penultimate(List[Int]())
       }
     }
-    it ("for empty list contain one element(should fail)") {
+    it ("for list contains only one element(should fail)") {
       intercept[Throwable] {
         P02.penultimate(List[Int](1))
       }
     }
-    it ("for empty list contain two elements") {
+    it ("for list contains two elements") {
       assert(P02.penultimate(List[Int](99, 100)) == 99)
     }
-    it ("for empty list contain three elements") {
+    it ("for list contains three elements") {
       assert(P02.penultimate(List[Int](98, 99, 100)) == 99)
     }
   }
