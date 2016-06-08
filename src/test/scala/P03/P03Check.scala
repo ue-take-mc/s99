@@ -9,6 +9,6 @@ import org.scalacheck.Prop.{forAll, BooleanOperators}
 
 class P03Check extends Properties("P03") {
   property("nth()") = forAll{(n: Int, s: List[Int]) =>
-    (s.nonEmpty && (n < s.size && n >= 0)) ==> (P03.nth(n, s).equals(s(n)))
+    (s.nonEmpty && (n < s.size && n >= 0)) ==> P03.nth(n, s).equals(s(n))
   }
 }
