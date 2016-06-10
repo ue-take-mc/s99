@@ -9,11 +9,11 @@ libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % "1.12.5" % "test"
 )
 
-val unusedWarnings = (
+val unusedWarnings =
   "-Ywarn-unused" ::
   "-Ywarn-unused-import" ::
   Nil
-)
+
 
 Seq(Compile, Test).flatMap(c =>
   scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
