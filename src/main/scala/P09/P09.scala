@@ -15,9 +15,9 @@ object P09 {
 
   def packWithTailRecursive[T](list: List[T]) : List[List[T]] = {
     def packRecursive(s : List[T], rest: List[T]): List[List[T]] = rest match {
-      case x :: xs if x == s.head => packRecursive(x :: s, rest)
-      case x :: xs => packRecursive(List(x), rest)
-      case Nil => List(List())
+      case x :: xs if x == s.head => packRecursive(x :: s, xs)
+      case x :: xs => s :: packRecursive(List(x), xs)
+      case Nil => s :: Nil
 
     }
     list match {
