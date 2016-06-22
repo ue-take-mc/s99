@@ -5,11 +5,14 @@ package P13
   */
 object P13 {
   def encodeDirect[T](list: List[T]): List[(Int, T)] = {
-    def encodeDirectResult(l: List[T], count: Int, result: List[(Int, T)]): List[(Int, T)] = l match {
-      case Nil => Nil
-      case x::xs if x == xs.head => encodeDirectResult(xs, count + 1, result)
-      case x::xs => encodeDirectResult(xs, 0, (count, x) :: result)
+    def encodeDirectResult(pre: T, count: Int, result: List[T]): List[(Int, T)] = result match {
+      case x::xs if pre == x => encodeDirectResult(pre, count + 1, xs)
+      case x::xs => (count, pre)::encodeDirectResult(x, 1, xs)
+      case _ => List((count, pre))
     }
-    encodeDirectResult(list, 0, List[(Int, T)]())
+    list match {
+      case x :: xs => encodeDirectResult(x, 1, xs)
+      case _ => List()
+    }
   }
 }
