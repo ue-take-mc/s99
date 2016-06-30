@@ -13,7 +13,7 @@ class P22Check extends Properties("P22") {
     } yield (i, j)
 
     Prop.forAll(gen) { case (i, j) =>
-      P22.range(i, j) == Range(i, j).toList
+      P22.range(i, j) == Range(i, j + 1).toList
     }
   }
 }

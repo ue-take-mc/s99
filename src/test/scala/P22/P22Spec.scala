@@ -12,5 +12,8 @@ class P22Spec extends FunSpec with DiagrammedAssertions {
     it ("for end and start equals") {
       assert(P22.range(10,10) == List(10))
     }
+    it ("for normal pattern") {
+      assert(P22.range(99, 103) == List(99,100,101,102,103))
+    }
   }
 }
