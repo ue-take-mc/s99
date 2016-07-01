@@ -1,6 +1,6 @@
 package P24
 
-import org.scalacheck.{Arbitrary, Gen, Prop, Properties}
+import org.scalacheck.{Gen, Prop, Properties}
 /**
   * Created by ueda on 2016/07/01.
   */
