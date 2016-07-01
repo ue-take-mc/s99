@@ -10,7 +10,7 @@ object P04 {
   }
 
   def sizeByTailRecursive[T](list: List[T]): Int = {
-    def sizeFromTail[T](count: Int, list: List[T]): Int = list match {
+    def sizeFromTail(count: Int, list: List[T]): Int = list match {
       case Nil => count
       case x::xs => sizeFromTail(count + 1, xs)
     }
