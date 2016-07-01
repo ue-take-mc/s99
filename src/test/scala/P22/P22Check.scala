@@ -1,7 +1,6 @@
 package P22
 
 import org.scalacheck.{Gen, Prop, Properties}
-import org.scalacheck.Prop.{BooleanOperators, forAll}
 /**
   * Created by ueda on 2016/06/30.
   */
